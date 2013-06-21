@@ -1,6 +1,6 @@
 Linda BabaScript notify Twitter
 ===============================
-Tweet BabaScript query with RocketIO::Linda
+Tweet all BabaScript requests with RocketIO::Linda
 
 * https://github.com/shokai/linda-babascript-notify-twitter
 * watch tuple ["notifications", baba_script_code] in the tuplespace "takumibaba"
