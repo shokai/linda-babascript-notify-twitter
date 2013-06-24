@@ -15,11 +15,12 @@ EM::run do
 
   linda.io.on :connect do  ## RocketIO's "connect" event
     puts "RocketIO connect!! (#{linda.io.type})"
-    ts.watch ["notifications"] do |tuple|
+    ts.watch ["babascript"] do |tuple|
       p tuple
-      next if tuple.size < 2
+      next if tuple.size < 3
       tuple.shift
       code = tuple.shift.to_s
+      code += tuple.shift.to_s
       args = tuple.shift
       if args.kind_of? Array and !args.empty?
         args = args.map{|i| %Q{"#{i}"} }.join(', ')
