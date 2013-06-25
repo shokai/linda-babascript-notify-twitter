@@ -22,7 +22,7 @@ EM::run do
       tuple.shift
       code = tuple.shift.to_s
       args = tuple.shift
-      if args.kind_of? Array and !args.empty?
+      if args.kind_of? Array
         args = args.map{|i| %Q{"#{i}"} }.join(', ')
       end
       puts code += "(#{args})"
