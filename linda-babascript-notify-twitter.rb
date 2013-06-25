@@ -19,13 +19,14 @@ EM::run do
       p tuple
       next if tuple.size < 3
       tuple.shift
+      tuple.shift
       code = tuple.shift.to_s
       args = tuple.shift
       if args.kind_of? Array and !args.empty?
         args = args.map{|i| %Q{"#{i}"} }.join(', ')
       end
       puts code += "(#{args})"
-      tuple = ["twitter", "tweet", "baba #{code}"]
+      tuple = ["twitter", "tweet", "baba eval #{code}"]
       p tuple
       ts_tweet.write tuple
     end
